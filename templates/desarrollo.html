@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Desarrollo Personal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body class="container mt-5">
+    <div class="desarrollo">
+        <h2>Formulario de Desarrollo Personal</h2>
+        <p>Por favor, califica cada aspecto en una escala del 1 al 10, donde 1 representa la menor satisfacción y 10 la mayor.</p>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label">¿De 1 a 10, cómo calificas tu aprendizaje y desarrollo?</label>
+                <input type="number" name="aprendizaje_desarrollo" class="form-control" min="1" max="10" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">¿De 1 a 10, qué tan claras están tus metas y sueños?</label>
+                <input type="number" name="claridad_metas_suenos" class="form-control" min="1" max="10" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">¿De 1 a 10, qué tanto te esfuerzas por alcanzar tu máximo potencial?</label>
+                <input type="number" name="esfuerzo_maximo_potencial" class="form-control" min="1" max="10" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">¿De 1 a 10, qué nivel de pasión y motivación sientes?</label>
+                <input type="number" name="pasion_motivacion" class="form-control" min="1" max="10" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">¿De 1 a 10, cómo calificas tu crecimiento personal?</label>
+                <input type="number" name="crecimiento_personal" class="form-control" min="1" max="10" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

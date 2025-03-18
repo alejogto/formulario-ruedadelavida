@@ -1,0 +1,177 @@
+body {
+    background-color: #fbfbfb;
+}
+
+.container1 {
+    background-color:#81c9fa;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(152, 12, 89, 0.2);
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    color: #080fea;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2196f3;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #9fa9f1;
+    color: #0d022b;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Estilos de la lista y enlaces */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/*Formulario empleado*/
+.empleado {
+
+    background-color: #badefa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.empleado h2 {
+    color: #063d8a;
+}
+
+.empleado .form-label {
+    color: #027af9;
+}
+
+.empleado .btn-primary {
+    background-color: #2196f3;
+    border: none;
+}
+
+.empleado .btn-primary:hover {
+    background-color: #003785;
+}
+
+/*Formulario amor*/
+.amor {
+    background-color: #ffd7f3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.amor h2 {
+    color: #ff35c2;
+}
+
+.amor .form-label {
+    color: #ff5dce;
+}
+
+.amor .btn-primary {
+    background-color: #ff86da;
+    border: none;
+}
+
+.amor .btn-primary:hover {
+    background-color: #ff35c2;
+}
+
+/*Formulario economia*/
+.economia {
+    background-color: #b6f9f0    ;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.economia h2 {
+    color: #1d7434;
+}
+
+.economia .form-label {
+    color: #2c924e;
+}
+
+.economia .btn-primary {
+    background-color: #47af6b;
+    border: none;
+}
+
+.economia .btn-primary:hover {
+    background-color: #1d7434;
+}
+
+/*Formulario desarrollo personal*/
+.desarrollo {
+    background-color: #e5e7e5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.desarrollo h2 {
+    color: #777977;
+}
+
+.desarrollo .form-label {
+    color: #363535;
+}
+
+.desarrollo .btn-primary {
+    background-color: #b2b4b2;
+    border: none;
+}
+
+.desarrollo .btn-primary:hover {
+    background-color: #777977;
+}
+
+/*Formulario salud*/
+.salud {
+    background-color: #ffd5ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.salud h2 {
+    color: #a856be;
+}
+
+.salud .form-label {
+    color: #c374d5;
+}
+
+.salud .btn-primary {
+    background-color: #d794e3;
+    border: none;
+}
+
+.salud .btn-primary:hover {
+    background-color: #a856be;
+}
+
+.success {
+        color: rgb(55, 6, 232);
+        font-weight: bold;
+    }
+    .success .btn-success{
+        background-color: #ee05a8;
+        border: none;}
