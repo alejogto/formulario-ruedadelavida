@@ -2,38 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Salud</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
-<body class="container mt-5">
-    <div class="salud">
-        <h2>Formulario de Salud</h2>
-        <p>Por favor, califica cada aspecto en una escala del 1 al 10, donde 1 representa la menor satisfacción y 10 la mayor.</p>
-        <form method="POST">
-            <div class="mb-3">
-                <label class="form-label">¿De 1 a 10, cómo calificas tu estado físico y mental?</label>
-                <input type="number" name="estado_fisico_mental" class="form-control" min="1" max="10" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">¿De 1 a 10, qué tanto cuidas tu cuerpo?</label>
-                <input type="number" name="cuidado_cuerpo" class="form-control" min="1" max="10" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">¿De 1 a 10, cómo calificas la calidad de tu sueño?</label>
-                <input type="number" name="calidad_sueno" class="form-control" min="1" max="10" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">¿De 1 a 10, cómo manejas el estrés y las emociones?</label>
-                <input type="number" name="manejo_estres_emociones" class="form-control" min="1" max="10" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">¿De 1 a 10, qué tan saludables son tus hábitos diarios?</label>
-                <input type="number" name="habitos_saludables" class="form-control" min="1" max="10" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-    </div>
+<body class="container">
+    <h2>Formulario de Salud</h2>
+    <form method="POST">
+        <label>Estado Físico y Mental (1-10)</label>
+        <input type="number" name="estado_fisico_mental" min="1" max="10" required>
+
+        <label>Cuidado del Cuerpo (1-10)</label>
+        <input type="number" name="cuidado_cuerpo" min="1" max="10" required>
+
+        <label>Calidad del Sueño (1-10)</label>
+        <input type="number" name="calidad_sueno" min="1" max="10" required>
+
+        <label>Manejo del Estrés y Emociones (1-10)</label>
+        <input type="number" name="manejo_estres_emociones" min="1" max="10" required>
+
+        <label>Hábitos Saludables (1-10)</label>
+        <input type="number" name="habitos_saludables" min="1" max="10" required>
+
+        <button type="submit">Siguiente</button>
+    </form>
 </body>
 </html>
