@@ -8,11 +8,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///respuestas.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# 📌 Modelo completo
+# Modelo completo para las respuestas
 class Respuesta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     formulario = db.Column(db.String(50), nullable=False)
-
+    
     nombre = db.Column(db.String(50), nullable=True)
     apellido = db.Column(db.String(50), nullable=True)
     vivienda = db.Column(db.String(100), nullable=True)
@@ -29,24 +29,6 @@ class Respuesta(db.Model):
     apertura_relaciones = db.Column(db.Integer, nullable=True)
     esfuerzo_relaciones = db.Column(db.Integer, nullable=True)
     claridad_amor = db.Column(db.Integer, nullable=True)
-
-    manejo_dinero = db.Column(db.Integer, nullable=True)
-    responsabilidad_financiera = db.Column(db.Integer, nullable=True)
-    metas_financieras = db.Column(db.Integer, nullable=True)
-    habito_ahorro = db.Column(db.Integer, nullable=True)
-    satisfaccion_trabajo_estudios = db.Column(db.Integer, nullable=True)
-
-    estado_fisico_mental = db.Column(db.Integer, nullable=True)
-    cuidado_cuerpo = db.Column(db.Integer, nullable=True)
-    calidad_sueno = db.Column(db.Integer, nullable=True)
-    manejo_estres_emociones = db.Column(db.Integer, nullable=True)
-    habitos_saludables = db.Column(db.Integer, nullable=True)
-
-    aprendizaje_desarrollo = db.Column(db.Integer, nullable=True)
-    claridad_metas_suenos = db.Column(db.Integer, nullable=True)
-    esfuerzo_maximo_potencial = db.Column(db.Integer, nullable=True)
-    pasion_motivacion = db.Column(db.Integer, nullable=True)
-    crecimiento_personal = db.Column(db.Integer, nullable=True)
 
     fecha_envio = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -135,11 +117,19 @@ def desarrollo(id):
 def success():
     return render_template("success.html")
 
+# Ruta para visualizar respuestas
 @app.route("/ver_respuestas")
 def ver_respuestas():
     respuestas = Respuesta.query.all()
     return render_template("ver_respuestas.html", respuestas=respuestas)
 
+# Ruta para eliminar respuesta
+@app.route("/eliminar_respuesta/<int:id>", methods=["POST"])
+def eliminar_respuesta(id):
+    respuesta = Respuesta.query.get_or_404(id)
+    db.session.delete(respuesta)
+    db.session.commit()
+    return redirect(url_for("ver_respuestas"))
 
 if __name__ == "__main__":
     app.run(debug=True)
