@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for,Response
+from flask import Flask, render_template, request, redirect, url_for, Response
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import pandas as pd
-import sqlite3
+import os  # Importa os para manejar directorios
 
 app = Flask(__name__)
 
@@ -142,13 +142,11 @@ def desarrollo(id):
 def success():
     return render_template("success.html")
 
-# Ruta para visualizar respuestas
 @app.route("/ver_respuestas")
 def ver_respuestas():
     respuestas = Respuesta.query.all()
     return render_template("ver_respuestas.html", respuestas=respuestas)
 
-# Ruta para eliminar respuesta
 @app.route("/eliminar_respuesta/<int:id>", methods=["POST"])
 def eliminar_respuesta(id):
     respuesta = Respuesta.query.get_or_404(id)
@@ -159,17 +157,20 @@ def eliminar_respuesta(id):
 # ==========================
 # EXPORTAR DATOS CSV y JSON
 # ==========================
-
 @app.route("/exportar_csv")
 def exportar_csv():
     try:
         with app.app_context():
             df = pd.read_sql("SELECT * FROM Respuesta", db.engine)
-            csv_data = df.to_csv(index=False)
 
-        response = Response(csv_data, content_type="text/csv")
-        response.headers["Content-Disposition"] = "attachment; filename=respuestas.csv"
-        return response
+            carpeta = "exportaciones"
+            if not os.path.exists(carpeta):
+                os.makedirs(carpeta)
+
+            ruta_archivo = os.path.join(carpeta, "respuestas.csv")
+            df.to_csv(ruta_archivo, index=False)
+
+        return f"Archivo CSV exportado correctamente en: {ruta_archivo}"
     except Exception as e:
         return f"Error al exportar CSV: {e}"
 
@@ -178,11 +179,15 @@ def exportar_json():
     try:
         with app.app_context():
             df = pd.read_sql("SELECT * FROM Respuesta", db.engine)
-            json_data = df.to_json(orient="records", indent=4)
 
-        response = Response(json_data, content_type="application/json")
-        response.headers["Content-Disposition"] = "attachment; filename=respuestas.json"
-        return response
+            carpeta = "exportaciones"
+            if not os.path.exists(carpeta):
+                os.makedirs(carpeta)
+
+            ruta_archivo = os.path.join(carpeta, "respuestas.json")
+            df.to_json(ruta_archivo, orient="records", indent=4)
+
+        return f"Archivo JSON exportado correctamente en: {ruta_archivo}"
     except Exception as e:
         return f"Error al exportar JSON: {e}"
 
