@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,Response
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import pandas as pd
+import sqlite3
 
 app = Flask(__name__)
 
@@ -13,6 +15,7 @@ class Respuesta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     formulario = db.Column(db.String(50), nullable=False)
     
+    # Datos del empleado
     nombre = db.Column(db.String(50), nullable=True)
     apellido = db.Column(db.String(50), nullable=True)
     vivienda = db.Column(db.String(100), nullable=True)
@@ -24,11 +27,33 @@ class Respuesta(db.Model):
     cargo = db.Column(db.String(50), nullable=True)
     estrato = db.Column(db.Integer, nullable=True)
 
+    # Sección Amor
     relacion = db.Column(db.Integer, nullable=True)
     expresion_amor = db.Column(db.Integer, nullable=True)
     apertura_relaciones = db.Column(db.Integer, nullable=True)
     esfuerzo_relaciones = db.Column(db.Integer, nullable=True)
     claridad_amor = db.Column(db.Integer, nullable=True)
+
+    # Sección Economía
+    manejo_dinero = db.Column(db.Integer, nullable=True)
+    responsabilidad_financiera = db.Column(db.Integer, nullable=True)
+    metas_financieras = db.Column(db.Integer, nullable=True)
+    habito_ahorro = db.Column(db.Integer, nullable=True)
+    satisfaccion_trabajo_estudios = db.Column(db.Integer, nullable=True)
+
+    # Sección Salud
+    estado_fisico_mental = db.Column(db.Integer, nullable=True)
+    cuidado_cuerpo = db.Column(db.Integer, nullable=True)
+    calidad_sueno = db.Column(db.Integer, nullable=True)
+    manejo_estres_emociones = db.Column(db.Integer, nullable=True)
+    habitos_saludables = db.Column(db.Integer, nullable=True)
+
+    # Sección Desarrollo
+    aprendizaje_desarrollo = db.Column(db.Integer, nullable=True)
+    claridad_metas_suenos = db.Column(db.Integer, nullable=True)
+    esfuerzo_maximo_potencial = db.Column(db.Integer, nullable=True)
+    pasion_motivacion = db.Column(db.Integer, nullable=True)
+    crecimiento_personal = db.Column(db.Integer, nullable=True)
 
     fecha_envio = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -130,6 +155,36 @@ def eliminar_respuesta(id):
     db.session.delete(respuesta)
     db.session.commit()
     return redirect(url_for("ver_respuestas"))
+
+# ==========================
+# EXPORTAR DATOS CSV y JSON
+# ==========================
+
+@app.route("/exportar_csv")
+def exportar_csv():
+    try:
+        with app.app_context():
+            df = pd.read_sql("SELECT * FROM Respuesta", db.engine)
+            csv_data = df.to_csv(index=False)
+
+        response = Response(csv_data, content_type="text/csv")
+        response.headers["Content-Disposition"] = "attachment; filename=respuestas.csv"
+        return response
+    except Exception as e:
+        return f"Error al exportar CSV: {e}"
+
+@app.route("/exportar_json")
+def exportar_json():
+    try:
+        with app.app_context():
+            df = pd.read_sql("SELECT * FROM Respuesta", db.engine)
+            json_data = df.to_json(orient="records", indent=4)
+
+        response = Response(json_data, content_type="application/json")
+        response.headers["Content-Disposition"] = "attachment; filename=respuestas.json"
+        return response
+    except Exception as e:
+        return f"Error al exportar JSON: {e}"
 
 if __name__ == "__main__":
     app.run(debug=True)
