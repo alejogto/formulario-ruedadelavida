@@ -58,7 +58,8 @@
     </table>
 
     <a href="{{ url_for('empleado') }}" class="btn btn-primary">Volver al inicio</a>
-    <a href="{{ url_for('exportar_csv') }}" class="btn btn-primary">Descargar CSV</a>
+    <a href="/descargar_csv" class="btn btn-primary">Descargar CSV</a>
+
     <a href="{{ url_for('exportar_json') }}" class="btn btn-success">Descargar JSON</a>
     <button class="btn btn-secondary" onclick="actualizarTabla()">Actualizar Tabla</button>
 

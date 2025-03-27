@@ -2,7 +2,12 @@ from flask import Flask, render_template, request, redirect, url_for, Response
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import pandas as pd
-import os  # Importa os para manejar directorios
+import os
+from flask import send_file  # Ya deberías tenerlo, si no, agrégalo arriba
+
+
+
+# Importa os para manejar directorios
 
 app = Flask(__name__)
 
@@ -190,6 +195,20 @@ def exportar_json():
         return f"Archivo JSON exportado correctamente en: {ruta_archivo}"
     except Exception as e:
         return f"Error al exportar JSON: {e}"
+    
+    
+@app.route("/descargar_csv")
+def descargar_csv():
+    try:
+        ruta_archivo = os.path.join("exportaciones", "respuestas.csv")
+        return send_file(
+            ruta_archivo,
+            mimetype="text/csv",
+            as_attachment=True,
+            download_name="respuestas.csv"
+        )
+    except Exception as e:
+        return f"Error al descargar CSV: {e}"
 
 if __name__ == "__main__":
     app.run(debug=True)

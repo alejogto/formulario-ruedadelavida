@@ -1,5 +1,12 @@
 id,formulario,nombre,apellido,vivienda,departamento,estado_civil,genero,edad,salario,cargo,estrato,relacion,expresion_amor,apertura_relaciones,esfuerzo_relaciones,claridad_amor,manejo_dinero,responsabilidad_financiera,metas_financieras,habito_ahorro,satisfaccion_trabajo_estudios,estado_fisico_mental,cuidado_cuerpo,calidad_sueno,manejo_estres_emociones,habitos_saludables,aprendizaje_desarrollo,claridad_metas_suenos,esfuerzo_maximo_potencial,pasion_motivacion,crecimiento_personal,fecha_envio
-1,empleado,Andrea,Garcés,Apartamento,Antioquia,soltero,femenino,22,8000000,Asistente Soporte,2,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2025-03-21 11:25:37.564280
-2,empleado,Xiodanny,Vasquez,Casa,Antioquia,soltero,femenino,29,10000000,Programador,2,10,10,10,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2025-03-21 11:28:05.233852
-3,empleado,Alejandro ,Restrepo,Casa,Antioquia,soltero,masculino,29,80000000,Programador,3,10,9,9,9,9,10,9,9,9,9,9,9,9,9,9,10,9,9,9,9,2025-03-21 11:32:20.150545
-4,empleado,David,Espinel,Apartamento,Antioquia,soltero,masculino,23,9000000000,Auxiliar Logistico,2,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2025-03-21 12:32:31.363148
+1,empleado,Andrea,Garcés,Apartamento,Antioquia,soltero,femenino,22,8000000,Asistente Soporte,2,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,2025-03-21 11:25:37.564280
+2,empleado,Xiodanny,Vasquez,Casa,Antioquia,soltero,femenino,29,10000000,Programador,2,10.0,10.0,10.0,9.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,2025-03-21 11:28:05.233852
+3,empleado,Alejandro ,Restrepo,Casa,Antioquia,soltero,masculino,29,80000000,Programador,3,10.0,9.0,9.0,9.0,9.0,10.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,10.0,9.0,9.0,9.0,9.0,2025-03-21 11:32:20.150545
+4,empleado,David,Espinel,Apartamento,Antioquia,soltero,masculino,23,9000000000,Auxiliar Logistico,2,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,2025-03-21 12:32:31.363148
+5,empleado,Maribel,Garcia,Casa,Antioquia,soltero,femenino,22,800000000,Auxiliar de Bodega,3,,,,,,,,,,,,,,,,,,,,,2025-03-21 13:06:45.395134
+6,empleado,Sebastian,correa,Apartamento,Antioquia,viudo,masculino,23,5000000,Asistente Soporte,3,9.0,6.0,10.0,10.0,3.0,4.0,7.0,10.0,10.0,10.0,8.0,9.0,8.0,9.0,6.0,8.0,9.0,7.0,9.0,10.0,2025-03-21 23:21:54.923746
+7,empleado,anuel,aa,Arrendada,antioquia,viudo,masculino,41,49,inge,5,7.0,4.0,4.0,2.0,4.0,1.0,1.0,1.0,1.0,10.0,10.0,10.0,10.0,10.0,8.0,8.0,5.0,2.0,4.0,1.0,2025-03-27 02:40:40.569121
+8,empleado,arca,aaa,Arrendada,antioquia,soltero,masculino,52,5222222222222,oficial ,2,10.0,10.0,10.0,10.0,7.0,5.0,5.0,5.0,5.0,5.0,3.0,3.0,3.0,3.0,1.0,2.0,2.0,2.0,2.0,2.0,2025-03-27 03:05:07.596420
+9,empleado,Prueba,Test,Casa,Antioquia,soltero,masculino,30,3000000,Desarrollador,3,,,,,,,,,,,,,,,,,,,,,2025-03-27 03:17:43.035696
+10,empleado,Prueba,Test,Casa,Antioquia,soltero,masculino,30,3000000,Desarrollador,3,,,,,,,,,,,,,,,,,,,,,2025-03-27 03:23:18.044244
+11,empleado,Prueba,Test,Casa,Antioquia,soltero,masculino,30,3000000,Desarrollador,3,,,,,,,,,,,,,,,,,,,,,2025-03-27 03:26:16.459810
