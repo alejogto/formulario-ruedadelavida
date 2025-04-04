@@ -1,0 +1,42 @@
+Título del proyecto: Rueda de la Vida
+
+Descripcion del proyecto: Este proyecto se centra en el desarrollo de una herramienta interactiva para la "Rueda de la Vida", una técnica utilizada en el desarrollo personal para evaluar y equilibrar diferentes áreas de la vida. La herramienta permitirá a los usuarios registrar y visualizar sus niveles de satisfacción en diversas áreas, como Amor, Economía, Salud y Desarrollo Personal.
+
+Requerimientos funcionales:
+ * Registro de datos:
+   * La herramienta permitirá a los usuarios ingresar datos para cada una de las áreas de la Rueda de la Vida (Amor, Economía, Salud, Desarrollo Personal).
+   * Los datos se registrarán en una escala numérica del 1 al 10, donde 1 representa la menor satisfacción y 10 la mayor.
+   * La herramienta permitirá guardar los datos ingresados para su posterior visualización y análisis.
+ * Visualización de la Rueda de la Vida:
+   * La herramienta generará una representación gráfica de la Rueda de la Vida, mostrando visualmente el nivel de satisfacción en cada área.
+   * La rueda se actualizará automáticamente cada vez que se ingresen nuevos datos.
+   * La herramienta permitirá visualizar la rueda en diferentes formatos (por ejemplo, radial, circular).
+ * Análisis de datos:
+   * La herramienta proporcionará un análisis básico de los datos ingresados, mostrando el promedio de satisfacción en cada área.
+   * Opcionalmente, se podrían incluir análisis más avanzados, como la comparación de datos a lo largo del tiempo o la identificación de áreas de mejora.
+ * Interfaz de usuario:
+   * La herramienta contará con una interfaz de usuario intuitiva y fácil de usar.
+   * La interfaz será adaptable a diferentes dispositivos (escritorio, móvil, tablet).
+   * Se utilizarán elementos visuales claros y concisos para facilitar la comprensión de la información.
+ * Funcionalidades adicionales (opcional):
+   * La herramienta podría permitir a los usuarios establecer metas para mejorar en áreas específicas.
+   * Se podría incluir la posibilidad de compartir la Rueda de la Vida en redes sociales o por correo electrónico.
+   * La herramienta podría ofrecer recomendaciones o recursos para ayudar a los usuarios a mejorar su nivel de satisfacción en diferentes áreas.
+Documentación adicional:
+ * Diagrama de casos de uso: Se incluirá un diagrama de casos de uso que represente las interacciones de los usuarios con la herramienta.
+* Plan de pruebas: Se desarrollará un plan de pruebas para garantizar el correcto funcionamiento de la herramienta.
+Consideraciones técnicas:
+ * La herramienta podría desarrollarse como una aplicación web o móvil, utilizando tecnologías como HTML, CSS, JavaScript, y posiblemente un framework como React o Angular.
+ * Se utilizará una base de datos para almacenar los datos de los usuarios.
+Entregables:
+ * Código fuente de la herramienta.
+ * Documentación técnica del proyecto.
+ * Manual de usuario.
+Cronograma:
+ * [Se incluirá un cronograma detallado con las fechas de entrega de cada fase del proyecto]
+Presupuesto:
+ * [Se incluirá un presupuesto detallado con los costos asociados al desarrollo del proyecto]
+Equipo del proyecto:
+Alejandro Restrepo
+Andrea Pabón
+Xiodanny Vasquez
